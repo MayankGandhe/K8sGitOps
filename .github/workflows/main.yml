@@ -45,3 +45,5 @@ jobs:
         run: |
           export KUBECONFIG=kubeconfig
           kubectl get pods -A
+          kubectl apply -f deployment.yml -n application
+          kubectl get deployments -n application
