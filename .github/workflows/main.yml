@@ -28,8 +28,15 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
-      - name: Kubectl tool installer
-        uses: Azure/setup-kubectl@v2.0
+      - name: Helm on EKS (with aws-iam-authenticator)
+        # You may pin to the exact commit or the version.
+        # uses: koslib/helm-eks-action@993379bdef756316cf22fd7d7b5a3689e60d898e
+        uses: koslib/helm-eks-action@v1.12.1
+        with:
+          # Your command (kubectl or helm)
+          command: |
+            export KUBECONFIG=kubeconfig
+            kubectl get pods -A
 
 
 
