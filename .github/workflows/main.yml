@@ -30,11 +30,9 @@ jobs:
         run: echo Hello, world!
       - name: Github Action for Helm/awscli/eksctl/kubectl
         uses: paunin/kops@v1.0.4
-        run: | 
-          kubectl get pods -A
+
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          kubectl get pods -A
